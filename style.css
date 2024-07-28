@@ -35,6 +35,8 @@ ul{
     padding-left: 20px;
     padding-right: 20px;
     color: #ffffff;
+    cursor: pointer ;
+
 }
 
 header{
@@ -75,10 +77,9 @@ header .highlight, header .current a{
 }
 
 header a:hover{
-    color: #cccccc;
+    color: #8498db;
     font-weight: bold;
 }
-
 
 #showcase{
     min-height: 400px;
@@ -96,8 +97,9 @@ header a:hover{
     font-size: 20px;
 }
 
-
+/* Contact */
 #contact{
+    border: 3px solid #1d5de8;
     padding: 15px;
     color: #ffffff;
     background: #35424a;
@@ -114,11 +116,13 @@ header a:hover{
 #contact input{
     padding: 4px;
     height: 20px;
-    width: 200px; ;
+    width: 200px; 
 }
 
+/* Services */
 
 #service-section{
+
     margin-top: 20px;
 }
 #service-section .box{
@@ -134,6 +138,42 @@ header a:hover{
     border-radius: 30px;
 }
 
+/* Professional Afiliations */
+
+#profession{
+    border: 3px solid #1d5de8;
+    background-color: rgb(71, 167, 188);
+    margin: 0;
+}
+#prof-container{
+
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+#profboxcontainer{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+    gap: 3px;
+}
+
+.box-prof{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 20px;
+}
+
+.profimg{
+    width: 200px;
+    height: 200px;
+}
+
 aside{
     float: right;
     margin-top:10px ;
@@ -144,7 +184,6 @@ aside#sidebar .quote input, aside#sidebar .quote textarea{
 width: 90%;
 padding: 5px;
 }
-
 
 article#maincol{
     float: left;
@@ -161,10 +200,11 @@ ul#services li{
 }
 
 footer{
+    border: 3px solid #1d5de8;
     padding: 20px;
     text-align: center;
     color: blue;
-    margin: 15px;
+    margin: 0px;
     background-color: #47daa99a;
 }
 
