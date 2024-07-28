@@ -76,7 +76,7 @@ header a:hover{
 
 #showcase{
     min-height: 400px;
-    background: url('/Images/download.jpeg') no-repeat;
+    background: url('/Images/images.jpeg') no-repeat;
     background-color: rgb(71, 167, 188);
     /* background: linear-gradient(rgb(125, 142, 127), rgb(59, 223, 65), rgb(0, 255, 238)); */
     text-align: center;
@@ -123,7 +123,8 @@ header a:hover{
 }
 
 #boxes .box img{
-    width: 90px;
+    width: 150px;
+    height: 150px;
 }
 
 aside{
