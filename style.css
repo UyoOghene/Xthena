@@ -23,6 +23,12 @@ ul{
     padding: 0;
 }
 
+#header-icon{
+    height: 50px;
+    width: 50px; ;
+ 
+}
+
 .button-1{
     height: 38px;
     background: #47daa99a;
@@ -112,19 +118,20 @@ header a:hover{
 }
 
 
-#boxes{
+#service-section{
     margin-top: 20px;
 }
-#boxes .box{
+#service-section .box{
     float: left;
     text-align: center;
     width: 30%;
     padding: 10px;
 }
 
-#boxes .box img{
+#service-section .box img{
     width: 150px;
     height: 150px;
+    border-radius: 30px;
 }
 
 aside{
