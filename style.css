@@ -399,3 +399,7 @@ th:nth-child(4), td:nth-child(4) {
 .contact-body a:hover {
     text-decoration: underline;
 }
+
+#services{
+    text-align: center;
+}
