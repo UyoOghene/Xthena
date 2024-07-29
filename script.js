@@ -29,32 +29,33 @@ const emailInput = document.querySelector('#email-input');
 const nameInput = document.querySelector('#name-input');
 const phoneInput = document.querySelector('#phone-input');
 const contactForm = document.querySelector('#contact-form');
+const contacctsubmitBtn = document.querySelector('#contactsubmit-btn');
 
 // Functions
-// const storeInput = (e) => {
-//   e.preventDefault();
-//   const emailVal = emailInput.value;
-//   const nameVal = nameInput.value;
-//   const phoneVal = phoneInput.value;
+const storeInput = (e) => {
+  e.preventDefault();
+  const emailVal = emailInput.value;
+  const nameVal = nameInput.value;
+  const phoneVal = phoneInput.value;
 
-//   console.log('submit');
-//   console.log(emailVal);
+  console.log('submit');
+  console.log(emailVal);
 
-//   saveContactInfo(emailVal, nameVal, phoneVal);
+  saveContactInfo(emailVal, nameVal, phoneVal);
 
-//   emailInput.value = '';
-//   phoneInput.value = '';
-//   nameInput.value = '';
-// };
+  emailInput.value = '';
+  phoneInput.value = '';
+  nameInput.value = '';
+};
 
-// const saveContactInfo = (email, name, phone) => {
-//   const newContactRef = push(contactInfoRef);
-//   set(newContactRef, {
-//     email: email,
-//     name: name,
-//     phone: phone
-//   });
-// };
+const saveContactInfo = (email, name, phone) => {
+  const newContactRef = push(contactInfoRef);
+  set(newContactRef, {
+    email: email,
+    name: name,
+    phone: phone
+  });
+};
 
-// // Event Listeners
-// contactForm.addEventListener('submit', storeInput);
+// Event Listeners
+contacctsubmitBtn.addEventListener('click', storeInput);
