@@ -1,5 +1,6 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-app.js";
 import { getDatabase, ref, push, set, onValue ,remove, update} from "https://www.gstatic.com/firebasejs/10.12.4/firebase-database.js";
+import { getAuth, GoogleAuthProvider, signInWithPopup, signOut } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-auth.js";
 
 // Environment variables
 window.env = {
@@ -19,6 +20,10 @@ const appSettings = {dataBaseURL : "https://xthena-252cd-default-rtdb.firebaseio
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig,appSettings);
+const auth = getAuth(app);
+auth.languageCode = 'en';
+const provider = new GoogleAuthProvider();
+const user = auth.currentUser;
 
 
 // Get a reference to the database
@@ -28,6 +33,12 @@ const database = getDatabase(app);
 const contactInfoRef = ref(database, "contactInfo");
 
 const adminContainer = document.querySelector('#admin-container');
+const googleBtn = document.querySelector('#googleBtn');
+const loginContainer = document.querySelector('.login-container');
+const inputField = document.querySelector('#input-field');
+const inputForm = document.querySelector('#add-btn-field');
+const form = document.querySelector('#form');
+
 
 
 
@@ -85,4 +96,22 @@ onValue(ref(database, "contactInfo"), (snapshot) => {
       adminContainer.innerHTML = 'No items on the list yet';
     }
   });
+
+
+  function login(e) {
+    e.preventDefault();
+    const username = document.getElementById('username').value;
+    const password = document.getElementById('password').value;
+
+    if (username === "zino" && password === "zimayoka" ) {
+        loginContainer.style.display = 'none';
+        adminContainer.style.display = 'flex';
+        
+    } else {
+        alert('Only admins allowed on this page');
+    }
+}
+
+document.querySelector('#login').addEventListener('click', login);
+
   

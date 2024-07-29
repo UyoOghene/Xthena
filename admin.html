@@ -8,9 +8,9 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon.ico/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon.ico/favicon-16x16.png">
     <link rel="manifest" href="./favicon.ico/site.webmanifest">
-
     <title>Xthena Admin</title>
 </head>
+
 <body id="adminbody">
         <!-- Navbar/titleblock-->
     <header>
@@ -30,12 +30,24 @@
       </nav>
     </div>
   </header> 
+    <section class="main-box">
+      <div class="login-container"> 
+        <h2 id="titleh2">Login</h2>
+        <form id="form">
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password">
+            <button id="login" type="submit">Login</button>
+            <button type="button" id="googleBtn">Login with Google<i class="fa fa-google-plus" ></i></button>
+        </form>
+    </div>
+    </section>
 
   <!-- contactinfo -->
    <div id="admin-container">
+  </div>
 
-    </div>
-     
     <script type="module" src="./admin.js"></script>
 </body>
 </html>
