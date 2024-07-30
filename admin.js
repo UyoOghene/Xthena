@@ -41,57 +41,97 @@ const form = document.querySelector('#form');
 
 
 
-
 onValue(ref(database, "contactInfo"), (snapshot) => {
 
     if (snapshot.exists()) {
       const info = snapshot.val();
       adminContainer.innerHTML = '';
-      const table = document.createElement('table');
-      table.setAttribute('border', '1');
-      table.setAttribute('id', 'table');
-      adminContainer.appendChild(table);
-      const headerRow = document.createElement('tr');
-      headerRow.setAttribute('id', 'headerRow');
-  
-      const headers = ['name', 'email', 'message','date'];
-      headers.forEach(headerText => {
-        const th = document.createElement('th');
-        th.setAttribute('id', 'th');
-        th.textContent = headerText;
-        headerRow.appendChild(th);
-      });
-      table.appendChild(headerRow);
-  
-      Object.keys(info).forEach(key => {
-        const { name, email, message,date, completed } = info[key];
-        const row = document.createElement('tr');
-        row.setAttribute('id', 'row');
-        table.appendChild(row);
-  
-        [name, email, message,date].forEach(text => {
-          const td = document.createElement('td');
-          td.setAttribute('id', 'td');
-          td.textContent = text;
-          row.appendChild(td);
-        });
-  
-        if (completed) {
-          row.style.textDecoration = 'line-through';
-        //   row.style.backgroundColor = 'red';
-        }
-  
-        row.addEventListener('click', () => {
-          const exactLocation = ref(database, `contactInfo/${key}`);
+      Object.keys(info).forEach(key =>{
+          const { name, email, message,date, completed } = info[key];
+          const contactBox = document.createElement('div');
+          adminContainer.appendChild(contactBox);
+          contactBox.setAttribute('id','contactBox');
+          const contactName = document.createElement('h3');
+          contactBox.appendChild(contactName);
+          contactName.setAttribute('id','contactName');
+          const contactMail = document.createElement('p');
+          contactBox.appendChild(contactMail);
+          contactMail.setAttribute('id','contactMail');
+          const contactMsg = document.createElement('p');
+          contactBox.appendChild(contactMsg);
+          contactMsg.setAttribute('id','contactMsg');
+          const deleteBtn = document.createElement('button');
+          contactBox.appendChild(deleteBtn);
+          deleteBtn.setAttribute('id','deleteBtn');
+          const dateBox = document.createElement('p');
+          contactBox.appendChild(dateBox);
+          dateBox.setAttribute('id','dateBox');   
+          contactName.textContent = name;
+          contactMail.textContent = email;
+          contactMsg.textContent = message;
+          dateBox.textContent = date;
+          function deleteContact(e){
+            let person = prompt("Are you sure you want to delete this?", "yes");
+            if (person !== null && person === 'yes'|| person !== null && person === 'Yes' ) {
+              console.log('remove')
+                const exactLocation = ref(database, `contactInfo/${key}`);
+                remove(exactLocation);
+          
+            } else{
+                console.log('wait');
+            }
+          }
+          
+          deleteBtn.addEventListener('click',deleteContact)
+      })
 
-          update(exactLocation, { completed: !completed });
-        });
+
+
+      // const table = document.createElement('table');
+      // table.setAttribute('border', '1');
+      // table.setAttribute('id', 'table');
+      // adminContainer.appendChild(table);
+      // const headerRow = document.createElement('tr');
+      // headerRow.setAttribute('id', 'headerRow');
   
-        row.addEventListener('dblclick', () => {
-          const exactLocation = ref(database, `contactInfo/${key}`);
-          remove(exactLocation);
-        });
-      });
+      // const headers = ['name', 'email', 'message','date'];
+      // headers.forEach(headerText => {
+      //   const th = document.createElement('th');
+      //   th.setAttribute('id', 'th');
+      //   th.textContent = headerText;
+      //   headerRow.appendChild(th);
+      // });
+      // table.appendChild(headerRow);
+  
+      // Object.keys(info).forEach(key => {
+      //   const { name, email, message,date, completed } = info[key];
+      //   const row = document.createElement('tr');
+      //   row.setAttribute('id', 'row');
+      //   table.appendChild(row);
+  
+      //   [name, email, message,date].forEach(text => {
+      //     const td = document.createElement('td');
+      //     td.setAttribute('id', 'td');
+      //     td.textContent = text;
+      //     row.appendChild(td);
+      //   });
+  
+      //   if (completed) {
+      //     row.style.textDecoration = 'line-through';
+      //   //   row.style.backgroundColor = 'red';
+      //   }
+  
+      //   row.addEventListener('click', () => {
+      //     const exactLocation = ref(database, `contactInfo/${key}`);
+
+      //     update(exactLocation, { completed: !completed });
+      //   });
+  
+      //   row.addEventListener('dblclick', () => {
+      //     const exactLocation = ref(database, `contactInfo/${key}`);
+      //     remove(exactLocation);
+      //   });
+      // });
     } else {
       adminContainer.innerHTML = 'No items on the list yet';
     }
