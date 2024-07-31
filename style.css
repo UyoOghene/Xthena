@@ -140,7 +140,6 @@ header a:active{
     width: 200px; 
 }
 
-
 /* Services */
 
 #service-section{
@@ -409,4 +408,60 @@ th:nth-child(4), td:nth-child(4) {
 
 #services{
     text-align: center;
+}
+
+#contactBox{
+    margin: 4px;
+    gap: 3px;
+    padding: 0px;
+    font-weight: bold;
+    border: none;
+    border-radius: 20px;
+    background-color: whitesmoke;
+    box-shadow: 0 10px 8px rgba(0, 0, 0, 0.1) ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 50em;
+    height: 20em;
+}
+
+#contactName{
+    margin: 0px;
+    padding: 0px;
+}
+#contactMsg{
+    margin: 0px;
+    padding: 0px;
+
+}
+#contactMail{
+    margin: 0px;
+    padding: 0px;
+
+}
+#dateBox{
+    
+    padding: 0px;
+    margin-left: 33em ;
+
+}
+
+#deleteBtn{
+    margin-top: 0px;
+    margin-bottom: 0px;
+    width: fit-content;
+    height: 1.5em;
+    padding: 2px;
+    background-color: rgb(238, 201, 201);
+    font-weight: bold;
+    margin-left: 33em ;
+    border-radius: 20px;
+    border: none;
+}
+#deleteBtn:hover{
+    height: 2em;
+    padding: 2px;
+    background-color: lightcoral;
 }
