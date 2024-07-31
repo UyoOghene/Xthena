@@ -26,6 +26,7 @@ const db = getDatabase(app);
 // Reference to contactInfo in the database
 const contactInfoRef = ref(db, "contactInfo");
 
+// Variables
 const emailInput = document.querySelector('#email-input');
 const nameInput = document.querySelector('#name-input');
 const messageInput = document.querySelector('#phone-input');
@@ -35,18 +36,33 @@ const servicesLink = document.querySelector('#services-a');
 
 // Functions
 
+function showToast(){
+  Toastify({
+    text: "Submit Successful!",
+    duration: 3000,
+    destination: "https://github.com/apvarun/toastify-js",
+    newWindow: true,
+    close: true,
+    gravity: "top", // `top` or `bottom`
+    position: "left", // `left`, `center` or `right`
+    stopOnFocus: true, // Prevents dismissing of toast on hover
+    style: {
+      background: "linear-gradient(to right, #00b09b, #96c93d)",
+    },
+    onClick: function(){} // Callback after click
+  }).showToast();
+  
+}
 
 const storeInput = (e) => {
   e.preventDefault();
+  showToast();
   const emailVal = emailInput.value;
   const nameVal = nameInput.value;
   const messageVal = messageInput.value;
-
   console.log('submit');
   console.log(emailVal);
-
   saveContactInfo(emailVal, nameVal, messageVal);
-
   emailInput.value = '';
   messageInput.value = '';
   nameInput.value = '';
@@ -72,4 +88,4 @@ const saveContactInfo = (email, name, message) => {
 
 // Event Listeners
 contactSubmitBtn.addEventListener('click', storeInput);
-// servicesLink.addEventListener('click', servicesFunc)
+
