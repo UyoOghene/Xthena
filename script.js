@@ -32,6 +32,8 @@ const messageInput = document.querySelector('#phone-input');
 const contactForm = document.querySelector('#contact-form');
 const contactSubmitBtn = document.querySelector('#contactsubmit-btn');
 const servicesLink = document.querySelector('#services-a');
+const navToggle = document.querySelector('.nav-toggle');
+const navUl = document.querySelector('header nav ul');
 
 // Functions
 
@@ -83,6 +85,27 @@ const saveContactInfo = (email, name, message) => {
     date: date,
   });
 };
+
+// Responsive navbar
+navToggle.addEventListener('click', function() {
+    navUl.classList.toggle('show');
+});
+navToggle.addEventListener('mouseover', function() {
+  navUl.classList.add('show');
+});
+
+navToggle.addEventListener('mouseout', function() {
+  navUl.classList.remove('show');
+});
+
+navUl.addEventListener('mouseover', function() {
+  navUl.classList.add('show');
+});
+
+navUl.addEventListener('mouseout', function() {
+  navUl.classList.remove('show');
+});
+
 
 // Event Listeners
 contactSubmitBtn.addEventListener('click', storeInput);

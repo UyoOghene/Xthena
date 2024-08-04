@@ -25,7 +25,6 @@ auth.languageCode = 'en';
 const provider = new GoogleAuthProvider();
 const user = auth.currentUser;
 
-
 // Get a reference to the database
 const database = getDatabase(app);
 
@@ -42,47 +41,47 @@ const form = document.querySelector('#form');
 
 // Contact details from database
 onValue(ref(database, "contactInfo"), (snapshot) => {
-    if (snapshot.exists()) {
-      const info = snapshot.val();
-      adminContainer.innerHTML = '';
-      Object.keys(info).forEach(key =>{
-          const { name, email, message,date, completed } = info[key];
-          const contactBox = document.createElement('div');
-          adminContainer.appendChild(contactBox);
-          contactBox.setAttribute('id','contactBox');
-          const deleteBtn = document.createElement('button');
-          contactBox.appendChild(deleteBtn);
-          deleteBtn.setAttribute('id','deleteBtn');
-          const dateBox = document.createElement('p');
-          contactBox.appendChild(dateBox);
-          dateBox.setAttribute('id','dateBox');   
-          const contactName = document.createElement('h3');
-          contactBox.appendChild(contactName);
-          contactName.setAttribute('id','contactName');
-          const contactMail = document.createElement('p');
-          contactBox.appendChild(contactMail);
-          contactMail.setAttribute('id','contactMail');
-          const contactMsg = document.createElement('p');
-          contactBox.appendChild(contactMsg);
-          contactMsg.setAttribute('id','contactMsg');
-          contactName.textContent = name;
-          contactMail.textContent = email;
-          contactMsg.textContent = message;
-          dateBox.textContent = date;
-          deleteBtn.textContent = 'Delete Contact'
-          function deleteContact(e){
-            let person = prompt("Are you sure you want to delete this?", "yes");
-            if (person !== null && person === 'yes'|| person !== null && person === 'Yes' ) {
-              console.log('remove')
-              const exactLocation = ref(database, `contactInfo/${key}`);
-              remove(exactLocation);          
-            } else{
-                console.log('wait');
-            }
-          }         
-          deleteBtn.addEventListener('click',deleteContact)
-      })
-    } else {
+  if (snapshot.exists()) {
+    const info = snapshot.val();
+    adminContainer.innerHTML = '';
+    Object.keys(info).forEach(key =>{
+        const { name, email, message,date, completed } = info[key];
+        const contactBox = document.createElement('div');
+        adminContainer.appendChild(contactBox);
+        contactBox.setAttribute('id','contactBox');
+        const deleteBtn = document.createElement('button');
+        contactBox.appendChild(deleteBtn);
+        deleteBtn.setAttribute('id','deleteBtn');
+        const dateBox = document.createElement('p');
+        contactBox.appendChild(dateBox);
+        dateBox.setAttribute('id','dateBox');   
+        const contactName = document.createElement('h3');
+        contactBox.appendChild(contactName);
+        contactName.setAttribute('id','contactName');
+        const contactMail = document.createElement('p');
+        contactBox.appendChild(contactMail);
+        contactMail.setAttribute('id','contactMail');
+        const contactMsg = document.createElement('p');
+        contactBox.appendChild(contactMsg);
+        contactMsg.setAttribute('id','contactMsg');
+        contactName.textContent = name;
+        contactMail.textContent = email;
+        contactMsg.textContent = message;
+        dateBox.textContent = date;
+        deleteBtn.textContent = 'Delete Contact'
+        function deleteContact(e){
+          let person = prompt("Are you sure you want to delete this?", "yes");
+          if (person !== null && person === 'yes'|| person !== null && person === 'Yes' ) {
+            console.log('remove')
+            const exactLocation = ref(database, `contactInfo/${key}`);
+            remove(exactLocation);          
+          } else{
+              console.log('wait');
+          }
+        }         
+        deleteBtn.addEventListener('click',deleteContact)
+    })
+  } else {
       adminContainer.innerHTML = 'No items on the list yet';
     }
   });
