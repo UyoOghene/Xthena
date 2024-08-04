@@ -1,4 +1,3 @@
-
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-app.js";
 import { getDatabase, ref, push, set } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-database.js";
 
@@ -85,7 +84,5 @@ const saveContactInfo = (email, name, message) => {
   });
 };
 
-
 // Event Listeners
 contactSubmitBtn.addEventListener('click', storeInput);
-

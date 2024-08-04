@@ -5,6 +5,103 @@ body{
     background-color: #f4f4f4;
 }
 
+.login-container h2 {
+    margin: 0 0 15px;
+    text-align: center;
+}
+
+.login-container label {
+    display: block;
+    margin: 10px 0 5px;
+}
+
+.login-container {
+     margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 300px;
+    padding: 5px;
+    background-color: rgb(183, 213, 249);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    row-gap: 5px;
+}
+
+.login-container h2 {
+    margin: 0 0 15px;
+    text-align: center;
+}
+
+.login-container label {
+    display: block;
+    margin: 10px 0 5px;
+}
+
+.login-container input {
+    width: 80%;
+    height: 2em;
+    padding: 2px;
+    margin: 2px 0 3px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+}
+
+#form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    row-gap: 5px;
+    padding: 5px;
+    margin: 2px;
+}
+#signUpassword{
+    height: 2em; 
+}
+
+#form input{
+    height: 2em;
+    margin: 2px;
+}
+
+#login {
+    width: 100%;
+    padding: 10px;
+    background-color: #28a745;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    font-size: 16px;
+}
+
+.fa-google-plus {
+    padding-left: 5px;
+    color: blue;
+    font-size: 20px;
+}
+
+#googleBtn {
+    width: 100%;
+    padding: 10px;
+    background-color: #283ba7;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    font-size: 16px;
+}
+
+#signup-btn{
+    background-color: #bc2599;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    font-size: 16px;
+    padding: 5px;
+
+}
+
 #adminbody{
     background-color: #82a7f6;
     margin: 0;
@@ -432,6 +529,10 @@ th:nth-child(4), td:nth-child(4) {
     padding: 0px;
 }
 #contactMsg{
+    padding: 5px;
+    background-color: rgb(229, 183, 249);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
     margin: 0px;
     padding: 0px;
 
@@ -464,4 +565,88 @@ th:nth-child(4), td:nth-child(4) {
     height: 2em;
     padding: 2px;
     background-color: lightcoral;
+}
+
+/* Media Queries */
+@media (max-width: 1200px) {
+    .container {
+        width: 90%;
+    }
+
+    header nav {
+        float: none;
+        text-align: center;
+    }
+
+    header li {
+        float: none;
+        display: block;
+        padding: 5px 0;
+    }
+
+    #contact form {
+        float: none;
+        text-align: center;
+    }
+
+    #contact input {
+        width: 90%;
+        margin-bottom: 10px;
+    }
+
+    #service-section .box {
+        width: 45%;
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+    }
+
+    #showcase h1 {
+        font-size: 35px;
+    }
+
+    #service-section .box {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    #profboxcontainer {
+        flex-direction: column;
+    }
+
+    .profimg {
+        width: 150px;
+        height: 150px;
+    }
+}
+
+@media (max-width: 480px) {
+    header nav {
+        display: none;
+    }
+
+    header #branding {
+        float: none;
+        text-align: center;
+    }
+
+    #contact h1, #contact form {
+        float: none;
+        text-align: center;
+        width: 100%;
+    }
+
+    #contact input {
+        width: 90%;
+        margin: auto;
+    }
+
+    #service-section .box {
+        width: 100%;
+        margin-bottom: 20px;
+    }
 }

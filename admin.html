@@ -13,37 +13,40 @@
 
 <body id="adminbody">
         <!-- Navbar/titleblock-->
-    <header>
+  <header>
     <div class="container">
       <div id="branding">
         <img src="./Images/icon.png" id="header-icon" alt="">
         <h1><span class="highlight">Xthena</span> construction</h1>
-    </div>
+      </div>
       <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="admin.html">Admin</a></li>
-        <li><a href="contact.html">contact</a></li>
-      </ul>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="admin.html">Admin</a></li>
+          <li><a href="contact.html">contact</a></li>
+        </ul>
       </nav>
     </div>
   </header> 
-    <section class="main-box">
-      <div class="login-container"> 
-        <h2 id="titleh2">Login</h2>
-        <form id="form">
-            <label for="username">Username</label>
-            <input type="text" id="username" name="username">
-            <label for="password">Password</label>
-            <input type="password" id="password" name="password">
-            <button id="login" type="submit">Login</button>
-            <button type="button" id="googleBtn">Login with Google<i class="fa fa-google-plus" ></i></button>
-        </form>
+
+  <section class="main-box">
+
+    <!-- Login form -->
+    <div class="login-container"> 
+      <h2 id="titleh2">Login</h2>
+      <form id="form">
+          <label for="username">Username</label>
+          <input type="text" id="username" name="username">
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password">
+          <button id="login" type="submit">Login</button>
+          <!-- <button type="button" id="googleBtn">Login with Google<i class="fa fa-google-plus" ></i></button> -->
+      </form>
     </div>
-    </section>
+  </section>
 
   <!-- contactinfo -->
-   <div id="admin-container">
+  <div id="admin-container">
   </div>
 
     <script type="module" src="./admin.js"></script>

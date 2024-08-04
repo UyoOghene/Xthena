@@ -74,8 +74,8 @@ onValue(ref(database, "contactInfo"), (snapshot) => {
             let person = prompt("Are you sure you want to delete this?", "yes");
             if (person !== null && person === 'yes'|| person !== null && person === 'Yes' ) {
               console.log('remove')
-                const exactLocation = ref(database, `contactInfo/${key}`);
-                remove(exactLocation);          
+              const exactLocation = ref(database, `contactInfo/${key}`);
+              remove(exactLocation);          
             } else{
                 console.log('wait');
             }
@@ -94,8 +94,7 @@ onValue(ref(database, "contactInfo"), (snapshot) => {
 
     if (username === "zino" && password === "zimayoka" ) {
         loginContainer.style.display = 'none';
-        adminContainer.style.display = 'flex';
-        
+        adminContainer.style.display = 'flex';    
     } else {
         alert('Only admins allowed on this page');
     }
