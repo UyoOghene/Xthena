@@ -1,31 +1,3 @@
-// import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js";
-// import { getAuth, GoogleAuthProvider, signInWithPopup, signOut } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-auth.js";
-// import { getDatabase, ref, onValue, push, remove, update } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js";
-
-// window.env = {
-//     New_api_key: "AIzaSyCAZPZFJ3UZ2NY9J6O3OhEh_RDedKTkVco"
-// };
-
-// const firebaseConfig = {
-//     apiKey: window.env.New_api_key,
-//     authDomain: "fresh-todolist.firebaseapp.com",
-//     projectId: "fresh-todolist",
-//     storageBucket: "fresh-todolist.appspot.com",
-//     messagingSenderId: "961687776701",
-//     appId: "1:961687776701:web:4b7edef4f97b0c3638b6d4",
-//     databaseURL: "https://fresh-todolist-default-rtdb.firebaseio.com/",
-// };
-
-// const app = initializeApp(firebaseConfig);
-// const auth = getAuth(app);
-// const dataBase = getDatabase(app);
-// auth.languageCode = 'en';
-// const provider = new GoogleAuthProvider();
-// const user = auth.currentUser;
-
-// const googleBtn = document.querySelector('#googleBtn');
-// const loginContainer = document.querySelector('.login-container');
-
 
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-app.js";
 import { getDatabase, ref, push, set } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-database.js";
@@ -71,6 +43,12 @@ const emailInput = document.querySelector('#email-input');
 const nameInput = document.querySelector('#name-input');
 const messageInput = document.querySelector('#phone-input');
 const contactForm = document.querySelector('#contact-form');
+const contact = document.querySelector('#contact');
+const showcase = document.querySelector('#showcase');
+const profession = document.querySelector('#profession');
+const slogan = document.querySelector('#slogan');
+const serviceSect = document.querySelector('#service-section');
+const navBar = document.querySelector('#navbar');
 const contactSubmitBtn = document.querySelector('#contactsubmit-btn');
 const servicesLink = document.querySelector('#services-a');
 const navToggle = document.querySelector('.nav-toggle');
@@ -81,19 +59,8 @@ const navUl = document.querySelector('header nav ul');
 const onGoogleLogin = () => {
   const user = auth.currentUser;
   if (user) {
-      console.log(user.email)
-      // const email = user.email;
-      // const userId = user.uid;
-      // localStorage.setItem('email', email);
-      // localStorage.setItem('userStore', JSON.stringify(user));
-      // localStorage.setItem('pic', user.photoURL);
-      // namebox.style.display = 'flex';
-      // imgbox.style.display = 'flex';
-      // const pic = user.photoURL;
-      // const name = user.displayName;
-      // namebox.textContent = name;
-      // imgbox.setAttribute('src', pic);
-      // applyThemePreference(userId); 
+      console.log(user.email); 
+      window.location.href = './home.html'; 
   }
 };
 
@@ -113,7 +80,6 @@ googleBtn.addEventListener('click', () => {
           console.error(error.code, error.message);
       });
 });
-
 
 function showToast(){
   Toastify({
