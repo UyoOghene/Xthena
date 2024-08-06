@@ -1,5 +1,5 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-app.js";
-import { getDatabase, ref, push, set, onValue ,remove, update} from "https://www.gstatic.com/firebasejs/10.12.4/firebase-database.js";
+import { getDatabase, ref, push, set,get, onValue ,remove, update} from "https://www.gstatic.com/firebasejs/10.12.4/firebase-database.js";
 import { getAuth, GoogleAuthProvider, signInWithPopup, signOut } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-auth.js";
 
 // Environment variables
@@ -86,19 +86,29 @@ onValue(ref(database, "contactInfo"), (snapshot) => {
     }
   });
 
-  function login(e) {
-    e.preventDefault();
-    const username = document.getElementById('username').value;
-    const password = document.getElementById('password').value;
 
-    if (username === "zino" && password === "zimayoka" ) {
-        loginContainer.style.display = 'none';
-        adminContainer.style.display = 'flex';    
+function login(e) {
+  e.preventDefault();
+  const adminusername = document.getElementById('username').value;
+  const adminpassword = document.getElementById('password').value;
+  const adminCredentialsRef = ref(database, "adminCredentials");
+  get(adminCredentialsRef).then((snapshot) => {
+  if (snapshot.exists()) {
+    const admininfo = snapshot.val();
+    if (adminusername === admininfo.username && adminpassword === admininfo.password) {
+      console.log('correct');
+      loginContainer.style.display = 'none';
+      adminContainer.style.display = 'flex';
     } else {
-        alert('Only admins allowed on this page');
+      alert('Only admins allowed on this page');
     }
+  } else {
+    alert('Admin credentials not found');
+  }
+  }).catch((error) => {
+    console.error('Error getting document:', error);
+    alert('Error logging in');
+  });
 }
 
 document.querySelector('#login').addEventListener('click', login);
-
-  

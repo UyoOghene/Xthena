@@ -220,6 +220,7 @@ footer {
   align-items: center;
   flex-direction: column;
   margin-top: 20px;
+  background-color: whitesmoke;
 }
 
 table {
@@ -406,14 +407,14 @@ td:nth-child(4) {
   font-weight: bold;
   border: none;
   border-radius: 20px;
-  background-color: whitesmoke;
+  background-color: #AACFE2;
   box-shadow: 0 10px 8px rgba(0, 0, 0, 0.1);
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  width: 50em;
-  height: 20em;
+  width: 30em;
+  height: 15em;
 }
 
 #contactName {
