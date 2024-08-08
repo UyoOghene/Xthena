@@ -5,6 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>xthena login</title>
     <link rel="stylesheet" href="./login.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" ></script>
+	<!-- Bootstrap theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+	<!-- Add icon library -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
     
@@ -12,8 +18,18 @@
         <h2 id="titleh2">Login</h2>
         <form id="form">
             <button type="button" id="googleBtn">Login with Google<i class="fa fa-google-plus" ></i></button>
-            <button id="signup-btn">sign in with facebook</button>
+
+            <div class="container">	
+                <div class="row">
+                  <div class="col-sm-4">
+                      <button type="button" id="facebook-login" name="facebook-login" class="btn btn-primary btn-lg btn-block"><i class="fa fa-facebook "></i> Login with Facebook</button>
+                  </div><!-- end col -->	
+                </div><!--  end row -->		
+                </form>
+              </div>
+              
         </form>
+
       </div>
     
     <script type="module" src="./script.js"></script>

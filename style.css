@@ -399,6 +399,9 @@ td:nth-child(4) {
 #services {
   text-align: center;
 }
+#login-password-requirements{
+  font-size: 10px;
+}
 
 #contactBox {
   margin: 4px;

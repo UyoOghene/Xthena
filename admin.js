@@ -37,7 +37,37 @@ const googleBtn = document.querySelector('#googleBtn');
 const loginContainer = document.querySelector('.login-container');
 const inputField = document.querySelector('#input-field');
 const inputForm = document.querySelector('#add-btn-field');
+const loginpassword = document.querySelector('#password');
+const loginRequirements = document.querySelector('#login-password-requirements');
+
 const form = document.querySelector('#form');
+
+document.addEventListener('DOMContentLoaded', () => {
+  loginpassword.addEventListener('focus', () => {
+      loginRequirements.style.display = 'block';
+  });
+
+  loginpassword.addEventListener('blur', () => {
+      loginRequirements.style.display = 'none';
+  });
+
+  loginpassword.addEventListener('input', () => {
+      const value = loginpassword.value;
+      const requirements = [
+          value.length >= 8,
+          /[A-Z]/.test(value),
+          /[a-z]/.test(value),
+          /[0-9]/.test(value),
+          /[^A-Za-z0-9]/.test(value)
+      ];
+      
+      const listItems2 = loginRequirements.querySelectorAll('li');
+      listItems2.forEach((item2, index) => {
+          item2.style.color = requirements[index] ? 'green' : 'red';
+      });
+  });
+})
+
 
 // Contact details from database
 onValue(ref(database, "contactInfo"), (snapshot) => {

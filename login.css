@@ -3,21 +3,165 @@ body{
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
    
 }
 .login-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    width: 300px;
-    height: 500px;
-    padding: 5px;
-    background-color: rgb(232, 164, 206);
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 350px;
+  background-color: #ffffff;
+  padding: 30px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  border: 2px solid #f6d365; 
+  background: linear-gradient(145deg, #a7a3e4, #dd85fd); 
+  color: #333;
+}
+
+  /* .main-container {
+    width: 350px;
+    background-color: #ffffff;
+    padding: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     border-radius: 10px;
-    row-gap: 5px;
-  }
+    border: 2px solid #f6d365; 
+    background: linear-gradient(145deg, #a7a3e4, #dd85fd); 
+    color: #333;
+} */
+
+h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    color: #333;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+    background-color: #e9f7ef;
+    border-color: #80bdff;
+    outline: none;
+}
+
+.requirements {
+    font-size: 12px;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.requirements ul {
+    padding-left: 20px;
+}
+
+.requirements li {
+    margin-bottom: 5px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-bottom: 10px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#login {
+    background-color: #007BFF;
+    color: #fff;
+}
+
+#googleBtn {
+    background-color: #DB4437;
+    color: #fff;
+}
+
+#signup-btn,
+#signUpSubmit {
+    background-color: #28a745;
+    color: #fff;
+}
+
+button:hover {
+    background-color: #555;
+    transform: scale(1.05);
+}
+
+#googleBtn i {
+    margin-left: 10px;
+}
+
+form {
+    display: none;
+}
+
+form.active {
+    display: block;
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.requirements {
+    display: none;
+    background-color: none;
+    opacity: 1;
+    border: none;
+    padding: 1px;
+    border-radius: 10px;
+    width: 80%;
+    margin-top: 1px;
+    font-size: 10px;
+    z-index: 2;
+}
+
+.requirements ul {
+    margin: 0;
+    padding-right: 5px;
+    padding-bottom: 1px;
+    margin-bottom: 1px;
+}
+
+.requirements ul li {
+    margin-bottom: 1px;
+    padding-bottom: 1px;
+}
+
+
+
   
   .login-container h2 {
     margin: 0 0 15px;
@@ -37,7 +181,74 @@ body{
     border: 1px solid #ccc;
     border-radius: 10px;
   }
-  
+  #login {
+    background-color: #007BFF;
+    color: #fff;
+}
+
+#googleBtn {
+    background-color: #DB4437;
+    color: #fff;
+}
+
+#signup-btn,
+#signUpSubmit {
+    background-color: #28a745;
+    color: #fff;
+}
+
+button:hover {
+    background-color: #555;
+    transform: scale(1.05);
+}
+
+#googleBtn i {
+    margin-left: 10px;
+}
+
+form {
+    display: none;
+}
+
+form.active {
+    display: block;
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.requirements {
+    display: none;
+    background-color: none;
+    opacity: 1;
+    border: none;
+    padding: 1px;
+    border-radius: 10px;
+    width: 80%;
+    margin-top: 1px;
+    font-size: 10px;
+    z-index: 2;
+}
+
+.requirements ul {
+    margin: 0;
+    padding-right: 5px;
+    padding-bottom: 1px;
+    margin-bottom: 1px;
+}
+
+.requirements ul li {
+    margin-bottom: 1px;
+    padding-bottom: 1px;
+}
+
   #form {
     display: flex;
     justify-content: center;
