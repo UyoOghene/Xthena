@@ -28,7 +28,7 @@
           <li><a href="admin.html">Admin</a></li>
           <li><a  href="#services">Services</a></li>
           <li><a href="#projects">Projects</a></li>
-          <li><a href="contact.html">contact</a></li>
+          <li><a href="#our-contact">contact</a></li>
         </ul>
       </nav>
     </div>
@@ -42,17 +42,33 @@
     </div>
   </section>
 
+  <section id="our-contact">
+    <div class="contact-card">
+        <div class="contact-header">
+            <h2>Contact Us</h2>
+        </div>
+        <div class="contact-body">
+            <p><strong>Phone 1:</strong> 08099812425</p>
+            <p><strong>Phone 2:</strong> 08069128425</p>
+            <p><strong>Email:</strong> <a href="mailto:zinoxt@gmail.com">zinoxt@gmail.com</a></p>
+        </div>
+    </div>
+  </section>
+
+
                               <!-- Contact -->
   <section id="contact">
-    <div class="container" id="contact-box">
+    <div class="container">
       <h1> Get in touch!</h1>
-      <form id="contact-form">
-        <label for="email-input">Your Email</label>
-        <input type="email" id="email-input" placeholder="Enter Email..." name="email" required> 
-        <label for="name-input">Your Name</label>
-        <input type="text" id="name-input" placeholder="Enter name..." name="name" required> 
+      <form id="contact-form"
+      action="https://formspree.io/f/mblrgwne"
+      method="POST">
+         <label for="email-input">Your Email</label>
+       <input type="email" id="email-input" placeholder="Enter Email..." name="email" required> 
+       <label for="name-input">Your Name</label>
+       <input type="text" id="name-input" placeholder="Enter name..." name="name" required> 
         <label for="message">Your message</label>
-        <input type="text" id="phone-input" placeholder="Enter message..." name="message" required> 
+       <input type="text" id="phone-input" placeholder="Enter message..." name="message" required> 
         <button type="submit" id="contactsubmit-btn" class="button-1">submit</button>
       </form>
     </div>
