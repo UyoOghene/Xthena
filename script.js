@@ -69,7 +69,8 @@ document.getElementById("facebook-login").addEventListener("click", function() {
     const accessToken = credential.accessToken;
     
     alert("Welcome "+user.displayName);
-    console.log(user);
+    window.location.href = "./home.html"; 
+       console.log(user);
     // ...
   })
   .catch((error) => {
