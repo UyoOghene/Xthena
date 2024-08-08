@@ -97,11 +97,6 @@ button {
     color: #fff;
 }
 
-#googleBtn {
-    background-color: #DB4437;
-    color: #fff;
-    width: 50%;
-}
 
 #signup-btn,
 #signUpSubmit {
@@ -278,7 +273,7 @@ form.active {
   }
   
   #googleBtn {
-    width: 10em;
+    width: 7em;
     padding: 5px;
     background-color: #283ba7;
     border: none;
@@ -288,7 +283,7 @@ form.active {
   }
   
   #facebook-login{
-    width: 10em;
+    width: 7em;
     padding: 5px;
     background-color: #283ba7;
     border: none;
